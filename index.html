@@ -1,362 +1,479 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>请按指引操作</title>
-  <meta name="description" content="请按指引操作,熟悉流程可跳转卡网下单，不熟悉可联系在线客服。">
-  <style>
-    :root{
-      --bg1:#ffffff;
-      --bg2:#faf7f2;
-      --card:#ffffffcc;
-      --border:rgba(17,24,39,.10);
-      --text:#111827;
-      --muted:#6b7280;
-      --accent:#2563eb;
-      --accent2:#22c55e;
-      --danger:#ef4444;
-      --warn:#f59e0b;
-      --shadow: 0 14px 40px rgba(17,24,39,.10);
-      --radius: 18px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      min-height:100vh;
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "PingFang SC","Hiragino Sans GB","Microsoft YaHei", Arial, "Noto Sans CJK SC", sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(900px 600px at 15% 10%, rgba(37,99,235,.16), transparent 60%),
-        radial-gradient(900px 600px at 85% 20%, rgba(245,158,11,.10), transparent 55%),
-        radial-gradient(700px 500px at 50% 90%, rgba(34,197,94,.10), transparent 55%),
-        linear-gradient(180deg, var(--bg1), var(--bg2));
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:24px;
-    }
-    .wrap{ width:min(920px, 100%); }
-    .card{
-      background:var(--card);
-      border:1px solid var(--border);
-      box-shadow:var(--shadow);
-      border-radius:var(--radius);
-      overflow:hidden;
-      backdrop-filter: blur(10px);
-    }
-    .header{
-      padding:26px 26px 18px;
-      border-bottom:1px solid rgba(17,24,39,.10);
-      display:flex;
-      gap:16px;
-      align-items:flex-start;
-    }
-    .badge{
-      flex:0 0 auto;
-      width:44px;height:44px;
-      border-radius:14px;
-      display:grid;place-items:center;
-      background:linear-gradient(135deg, rgba(239,68,68,.92), rgba(37,99,235,.92));
-      box-shadow: 0 10px 28px rgba(37,99,235,.16);
-    }
-    .badge svg{width:22px;height:22px}
-    .badge svg path{ stroke:#fff !important; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    h1{ margin:0; font-size:20px; letter-spacing:.2px; }
-    .sub{
-      margin:6px 0 0;
-      color:var(--muted);
-      font-size:14px;
+  <title>服务说明</title>
+  <meta name="description" content="服务说明页面。">
+
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+
+  <meta name="referrer" content="no-referrer">
+
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    base-uri 'self';
+    form-action 'self';
+    object-src 'none';
+    script-src 'self' https://static.cloudflareinsights.com 'unsafe-inline';
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' data: https:;
+    font-src 'self' data:;
+    media-src https://cloud.video.taobao.com https://video-sh.cloudvideocdn.taobao.com;
+    connect-src 'self' https://static.cloudflareinsights.com;
+    upgrade-insecure-requests;
+    block-all-mixed-content
+  ">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,sans-serif;
+      background:linear-gradient(135deg,#0f2027 0%,#203a43 50%,#2c5364 100%);
+      min-height:100vh;
       line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      color:#e0e0e0
     }
-    .content{
-      padding:22px 26px 26px;
+    .container{max-width:900px;margin:0 auto;padding:20px}
+    .header{text-align:center;padding:60px 0 50px}
+    .header h1{
+      color:#fff;
+      font-size:3.5rem;
+      font-weight:700;
+      margin-bottom:20px;
+      text-shadow:0 4px 30px rgba(0,0,0,0.4);
+      letter-spacing:-0.5px
+    }
+    .header .subtitle{
+      color:rgba(255,255,255,0.95);
+      font-size:1.4rem;
+      font-weight:500;
+      letter-spacing:2px
+    }
+    .main-content{
+      background:#2c3e50;
+      border-radius:24px;
+      box-shadow:0 20px 50px rgba(0,0,0,0.3);
+      overflow:hidden;
+      margin-bottom:50px;
+      border:1px solid rgba(255,255,255,0.1)
+    }
+    .product-section{
+      background:linear-gradient(135deg,#34495e 0%,#2c3e50 100%);
+      color:#fff;
+      padding:60px 40px;
+      text-align:center;
+      position:relative;
+      overflow:hidden
+    }
+    .product-badge{
+      display:inline-block;
+      background:rgba(255,255,255,0.1);
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,0.2);
+      padding:12px 24px;
+      border-radius:25px;
+      font-size:1.2rem;
+      font-weight:600;
+      margin-bottom:25px;
+      position:relative;
+      z-index:2;
+      letter-spacing:1px;
+      color:#f1c40f
+    }
+    .product-title{
+      font-size:2.8rem;
+      font-weight:700;
+      margin-bottom:20px;
+      position:relative;
+      z-index:2;
+      text-shadow:0 2px 15px rgba(0,0,0,0.3);
+      letter-spacing:-1px
+    }
+    .product-price{
+      margin-bottom:15px;
+      position:relative;
+      z-index:2;
+      display:flex;
+      justify-content:center;
+      align-items:baseline;
+      gap:15px;
+      flex-wrap:wrap
+    }
+    .price-prefix{font-size:1.6rem;font-weight:500;opacity:0.9}
+    .price-amount{
+      font-size:5rem;
+      font-weight:800;
+      text-shadow:0 4px 20px rgba(0,0,0,0.4);
+      background:linear-gradient(45deg,#f1c40f,#f39c12);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+      line-height:1
+    }
+    .price-suffix{font-size:1.3rem;font-weight:500;opacity:0.9}
+    .help-btn{
+      display:inline-block;
+      padding:14px 32px;
+      text-decoration:none;
+      border-radius:25px;
+      transition:all 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
+      position:relative;
+      z-index:2;
+      background:linear-gradient(135deg,#f39c12 0%,#e67e22 100%);
+      color:#fff;
+      font-size:1.2rem;
+      font-weight:600;
+      margin:25px auto 0;
+      box-shadow:0 8px 25px rgba(0,0,0,0.2);
+      border:1px solid rgba(255,255,255,0.3)
+    }
+    .help-btn:hover{transform:translateY(-4px);box-shadow:0 12px 35px rgba(0,0,0,0.3)}
+    .product-period{
+      font-size:1.3rem;
+      opacity:0.95;
+      margin-top:25px;
+      position:relative;
+      z-index:2;
+      font-weight:500
+    }
+    .product-period .qr-code{
+      width:300px;height:300px;margin:20px auto;display:block;
+      border-radius:16px;border:4px solid rgba(255,255,255,0.2)
+    }
+    .purchase-section{padding:50px 40px;background:#2c3e50}
+    .purchase-title{
+      font-size:2rem;color:#ecf0f1;text-align:center;margin-bottom:40px;
+      font-weight:700;letter-spacing:-0.5px
+    }
+    .purchase-options{display:grid;grid-template-columns:1fr 1fr;gap:25px;margin-bottom:35px}
+    .purchase-btn{
+      display:block;padding:30px 25px;text-decoration:none;border-radius:16px;text-align:center;
+      transition:all 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
+      position:relative;overflow:hidden;border:2px solid transparent;
+      box-shadow:0 8px 30px rgba(0,0,0,0.2)
+    }
+    .purchase-btn.primary{background:linear-gradient(135deg,#3498db 0%,#2980b9 100%);color:#fff}
+    .purchase-btn.secondary{background:linear-gradient(135deg,#f1c40f 0%,#f39c12 100%);color:#fff}
+    .purchase-btn:hover{transform:translateY(-5px);box-shadow:0 15px 40px rgba(0,0,0,0.3)}
+    .purchase-btn h3{font-size:1.4rem;font-weight:700;margin-bottom:10px;position:relative;z-index:2;letter-spacing:-0.3px}
+    .purchase-btn p{opacity:0.9;font-size:1.1rem;position:relative;z-index:2;font-weight:500}
+    .guarantee-section{padding:50px 40px;background:linear-gradient(135deg,#34495e 0%,#2c3e50 100%)}
+    .guarantee-title{font-size:2rem;color:#ecf0f1;margin-bottom:35px;text-align:center;font-weight:700;letter-spacing:-0.5px}
+    .guarantee-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
+    .guarantee-item{
+      display:flex;align-items:flex-start;padding:25px;background:#2c3e50;border-radius:16px;
+      box-shadow:0 8px 25px rgba(0,0,0,0.15);
+      transition:all 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
+      border:1px solid rgba(255,255,255,0.1)
+    }
+    .guarantee-item:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,0.25);border-color:#3498db}
+    .guarantee-icon{font-size:2rem;margin-right:18px;margin-top:3px}
+    .guarantee-text h4{color:#ecf0f1;font-weight:700;margin-bottom:8px;font-size:1.2rem;letter-spacing:-0.3px}
+    .guarantee-text p{color:#bdc3c7;font-size:1rem;line-height:1.5;font-weight:400}
+    .video-section{padding:50px 40px;background:#2c3e50;text-align:center}
+    .video-title{font-size:2rem;color:#3498db;margin-bottom:25px;font-weight:700;letter-spacing:-0.5px}
+    .video-container{max-width:800px;margin:0 auto}
+    .video-player{width:100%;height:auto;border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,0.3)}
+    .features{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;padding:50px 40px;background:linear-gradient(135deg,#2c3e50 0%,#212f3c 100%)
+    }
+    .feature-card{
+      background:rgba(52,73,94,0.8);padding:35px 25px;border-radius:18px;text-align:center;
+      box-shadow:0 12px 30px rgba(0,0,0,0.2);
+      backdrop-filter:blur(15px);
+      transition:all 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
+      border:1px solid rgba(52,152,219,0.3)
+    }
+    .feature-card:hover{transform:translateY(-5px);box-shadow:0 20px 40px rgba(0,0,0,0.3);border-color:#3498db}
+    .feature-icon{font-size:2.8rem;margin-bottom:18px;display:block}
+    .feature-card h4{color:#ecf0f1;font-weight:700;margin-bottom:10px;font-size:1.3rem;letter-spacing:-0.3px}
+    .feature-card p{color:#bdc3c7;font-size:1rem;line-height:1.5;font-weight:400}
+    @media (max-width:768px){
+      .container{padding:15px}
+      .header h1{font-size:2.5rem}
+      .header .subtitle{font-size:1.2rem}
+      .purchase-options{grid-template-columns:1fr}
+      .product-section,.purchase-section,.guarantee-section,.video-section,.features{padding:40px 20px}
+    }
+    @media (max-width:480px){
+      .header h1{font-size:2rem}
+      .header .subtitle{font-size:1rem}
+      .product-title{font-size:2rem}
+      .price-amount{font-size:3.5rem}
+      .purchase-btn h3{font-size:1.2rem}
+      .purchase-btn p{font-size:1rem}
+    }
+
+    .warning-banner{
+      max-width:900px;
+      margin:-22px auto 22px;
+      border-radius:14px;
+      overflow:hidden;
+      box-shadow:0 14px 34px rgba(0,0,0,0.28);
+      border:1px solid rgba(245,158,11,0.35);
+      background:linear-gradient(135deg,rgba(255,247,237,0.95) 0%,rgba(255,251,235,0.92) 55%,rgba(255,255,255,0.90) 100%);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      text-align:left;
+      color:#7c2d12
+    }
+    .warning-inner{
       display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:18px;
+      grid-template-columns:56px 1fr;
+      gap:14px;
+      padding:16px 16px 14px;
+      position:relative
     }
-    @media (max-width: 780px){ .content{grid-template-columns:1fr} }
-    .panel{
-      border:1px solid rgba(17,24,39,.10);
-      border-radius:16px;
-      padding:18px;
-      background:rgba(255,255,255,.88);
+    .warning-inner::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:radial-gradient(circle at 0% 0%,rgba(245,158,11,0.18),transparent 55%),radial-gradient(circle at 100% 0%,rgba(52,152,219,0.10),transparent 55%);
+      pointer-events:none
     }
-    .title{
+    .warning-icon-wrap{
+      position:relative;
+      z-index:1;
+      width:56px;height:56px;border-radius:16px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg,rgba(245,158,11,0.18),rgba(245,158,11,0.08));
+      border:1px solid rgba(245,158,11,0.25);
+      box-shadow:0 10px 20px rgba(245,158,11,0.10);
+      user-select:none;
+      -webkit-user-select:none
+    }
+    .warning-icon{font-size:1.35rem;line-height:1}
+    .warning-content{position:relative;z-index:1}
+    .warning-head{
       display:flex;
       align-items:center;
+      justify-content:space-between;
       gap:10px;
-      margin:0 0 10px;
-      font-size:16px;
+      margin-bottom:6px;
+      flex-wrap:wrap
     }
-    .dot{
-      width:10px;height:10px;border-radius:999px;
-      background:var(--danger);
-      box-shadow:0 0 0 6px rgba(239,68,68,.10);
+    .warning-title{font-size:1.12rem;font-weight:900;letter-spacing:-0.2px;color:#7c2d12}
+    .warning-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:0.9rem;
+      font-weight:900;
+      color:#7c2d12;
+      background:rgba(245,158,11,0.14);
+      border:1px solid rgba(245,158,11,0.28);
+      white-space:nowrap
     }
-    .p{
-      margin:0;
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.75;
-    }
-    .actions{
+    .warning-desc{font-size:1rem;font-weight:700;color:#9a3412;margin:0 0 12px;line-height:1.6}
+    .warning-actions{
       display:flex;
-      flex-direction:column;
-      gap:10px;
-      margin-top:14px;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:10px
     }
-    .btn{
-      appearance:none;
-      border:none;
-      border-radius:14px;
-      padding:12px 14px;
-      font-weight:700;
-      cursor:pointer;
-      text-decoration:none;
+    .warning-tags{display:flex;flex-wrap:wrap;gap:10px}
+    .warning-tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:900;
+      font-size:0.95rem;
+      color:#7c2d12;
+      background:rgba(255,255,255,0.72);
+      border:1px solid rgba(245,158,11,0.22);
+      box-shadow:0 8px 18px rgba(0,0,0,0.10);
+      white-space:nowrap;
+      user-select:none;
+      -webkit-user-select:none
+    }
+    .warning-tag::before{
+      content:"";
+      width:8px;height:8px;border-radius:999px;
+      background:rgba(245,158,11,0.65);
+      box-shadow:0 0 0 4px rgba(245,158,11,0.12)
+    }
+    .warning-cta{
       display:inline-flex;
       align-items:center;
       justify-content:center;
       gap:10px;
-      transition: transform .08s ease, filter .15s ease, box-shadow .15s ease;
-      user-select:none;
-      text-align:center;
-    }
-    .btn:active{ transform: translateY(1px) }
-    .btn-primary{
-      background:linear-gradient(180deg, var(--accent), #3b82f6);
-      color:white;
-      box-shadow: 0 12px 28px rgba(37,99,235,.18);
-    }
-    .btn-ghost{
-      background:rgba(255,255,255,.78);
-      border:1px solid rgba(17,24,39,.12);
-      color:var(--text);
-    }
-    .btn:hover{ filter:brightness(1.03) }
-
-    .notice{
-      margin-top:10px;
-      border-radius:14px;
-      padding:12px 12px;
-      border:1px solid rgba(245,158,11,.32);
-      background:rgba(245,158,11,.12);
-      color:#6b3f00;
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      line-height:1.6;
-      font-size:13px;
-    }
-    .notice svg{width:18px;height:18px; flex:0 0 auto; margin-top:1px; opacity:.95}
-    .notice b{color:#4b2c00}
-    .notice svg path{ stroke:#6b3f00 !important; }
-
-    .info{
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
-    .row{
-      display:flex;
-      align-items:flex-start;
-      gap:10px;
-      padding:12px 12px;
-      border-radius:14px;
-      border:1px solid rgba(17,24,39,.10);
-      background:rgba(255,255,255,.76);
-    }
-    .row svg{width:18px;height:18px; flex:0 0 auto; margin-top:1px; opacity:.95}
-    .row b{display:block; font-size:13px; margin-bottom:2px}
-    .row span{color:var(--muted); font-size:13px; line-height:1.6}
-    .row svg path{ stroke: var(--text) !important; }
-
-    code{
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-      background:rgba(17,24,39,.05);
-      padding:2px 6px;
-      border-radius:8px;
-      border:1px solid rgba(17,24,39,.10);
-      color:var(--text);
-    }
-    .footer{
-      padding:14px 26px;
-      border-top:1px solid rgba(17,24,39,.10);
-      color:rgba(107,114,128,.95);
-      font-size:12px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      justify-content:space-between;
-      align-items:center;
-    }
-    .toast{
-      position:fixed;
-      left:50%;
-      bottom:18px;
-      transform:translateX(-50%);
-      background:rgba(17,24,39,.94);
-      border:1px solid rgba(255,255,255,.18);
+      padding:10px 14px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:900;
+      font-size:0.95rem;
       color:#fff;
-      padding:10px 12px;
-      border-radius:12px;
-      font-size:13px;
-      box-shadow: 0 18px 60px rgba(0,0,0,.18);
-      opacity:0;
-      pointer-events:none;
-      transition:opacity .18s ease, transform .18s ease;
+      background:linear-gradient(135deg,#ffb700 0%,#ff8c00 100%);
+      box-shadow:0 10px 22px rgba(0,0,0,0.18);
+      border:1px solid rgba(255,255,255,0.35);
+      white-space:nowrap
     }
-    .toast.show{
-      opacity:1;
-      transform:translateX(-50%) translateY(-4px);
+    .warning-foot{
+      font-size:0.95rem;
+      font-weight:800;
+      color:rgba(124,45,18,0.92);
+      line-height:1.55
+    }
+    @media (max-width:768px){
+      .warning-banner{margin:-10px auto 18px}
+      .warning-actions{flex-direction:column;align-items:stretch}
+      .warning-cta{width:100%}
+    }
+    @media (max-width:480px){
+      .warning-inner{grid-template-columns:44px 1fr;gap:10px;padding:12px}
+      .warning-icon-wrap{width:44px;height:44px;border-radius:12px}
+      .warning-title{font-size:1.02rem}
+      .warning-desc{font-size:0.92rem;margin-bottom:10px}
+      .warning-tag{font-size:0.9rem;padding:10px 10px}
+      .warning-foot{font-size:0.92rem}
     }
   </style>
 </head>
 
 <body>
-  <main class="wrap">
-    <section class="card" role="region" aria-label="请按指引操作">
-      <header class="header">
-        <div class="badge" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none">
-            <path d="M12 9v5" stroke="white" stroke-width="2" stroke-linecap="round"/>
-            <path d="M12 17.5h.01" stroke="white" stroke-width="3" stroke-linecap="round"/>
-            <path d="M10.3 4.5h3.4c.7 0 1.4.4 1.7 1l5.5 10.7c.7 1.4-.3 3.1-1.9 3.1H5.2c-1.6 0-2.6-1.7-1.9-3.1l5.5-10.7c.3-.6 1-1 1.7-1Z"
-                  stroke="white" stroke-width="1.8" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div>
-          <h1>请按指引操作</h1>
-          <p class="sub">
-            为避免影响下单与服务，请根据以下指引进行操作。
-          </p>
-        </div>
-      </header>
+  <div class="container">
+    <header class="header">
+      <h1>🚀 ChatGPT Plus 代充</h1>
+      <div class="subtitle">专业 • 安全 • 正规</div>
+    </header>
 
-      <div class="content">
-        <div class="panel">
-          <h2 class="title"><span class="dot"></span>处理方式</h2>
-          <p class="p">
-            1）如果你已熟悉下单流程：可直接跳转到卡网下单。<br/>
-            2）如果你不熟悉流程，或需要其他咨询与服务：请联系客服协助处理。
-          </p>
-
-          <div class="actions">
-            <a class="btn btn-primary"
-               href="https://fe.dtyuedan.cn/shop/lily"
-               target="_blank" rel="noopener noreferrer">
-              进入卡网下单（自助购买）
-              <span aria-hidden="true">↗</span>
+    <div class="warning-banner" role="note" aria-label="业务提醒">
+      <div class="warning-inner">
+        <div class="warning-icon-wrap" aria-hidden="true"><span class="warning-icon">🧩</span></div>
+        <div class="warning-content">
+          <div class="warning-head">
+            <div class="warning-title">业务提醒</div>
+            <div class="warning-badge">多平台</div>
+          </div>
+          <div class="warning-desc">自助卡网除 <strong>ChatGPT Plus</strong> 外，另提供以下相关业务：</div>
+          <div class="warning-actions">
+            <div class="warning-tags" aria-label="相关业务">
+              <span class="warning-tag">Gpt Pro</span>
+              <span class="warning-tag">Grok</span>
+              <span class="warning-tag">Claude</span>
+              <span class="warning-tag">Gemini</span>
+            </div>
+            <a class="warning-cta" href="https://fe.dtyuedan.cn/shop/lily" target="_blank" rel="noopener noreferrer">
+              点击进入卡网 →
             </a>
-
-            <button class="btn btn-ghost" type="button" id="copyBtn">
-              复制客服微信：BKP168001
-            </button>
-
-            <div class="notice" role="note" aria-label="重要提示">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M12 8v5" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                <path d="M12 16.5h.01" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                <path d="M10.3 3.8h3.4c.7 0 1.3.4 1.6 1l6 11.6c.7 1.4-.3 3.1-1.9 3.1H4.2c-1.6 0-2.6-1.7-1.9-3.1l6-11.6c.3-.6.9-1 1.6-1Z"
-                      stroke="white" stroke-opacity=".9" stroke-width="1.6" stroke-linejoin="round"/>
-              </svg>
-              <div>
-                <b>重要提示：</b>此域名可能随时访问不了，建议添加我们的微信联系方式，以防失联！
-              </div>
-            </div>
+          </div>
+          <div class="warning-foot">
+            其他业务请进卡网先查看对应商品说明；如有疑问，联系客服。。<br>
+            需要了解Gpt plus的更多详情下拉网页就可。
           </div>
         </div>
+      </div>
+    </div>
 
-        <aside class="panel info">
-          <h2 class="title" style="margin-bottom:6px;">
-            <span class="dot" style="background:var(--accent2); box-shadow:0 0 0 6px rgba(45,212,191,.12)"></span>
-            客服联系
-          </h2>
-
-          <div class="row">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M7 7.5c0 5.8 3.7 9.5 9.5 9.5l2-2c.4-.4.9-.5 1.4-.3l2.2 1c.6.3.9 1 .7 1.6-.7 2.2-2.6 3.7-5.1 3.7C10.7 21 3 13.3 3 4.3 3 1.8 4.5 0 6.7 0c.6 0 1.2.3 1.5.9l1 2.2c.2.5.1 1-.3 1.4l-2 2Z"
-                    stroke="white" stroke-opacity=".9" stroke-width="1.8" stroke-linejoin="round"/>
-            </svg>
-            <div>
-              <b>微信</b>
-              <span><code>BKP168001</code>（点击左侧按钮可一键复制）</span>
-            </div>
-          </div>
-
-          <div class="row">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M4 6.5C4 5.1 5.1 4 6.5 4h11C18.9 4 20 5.1 20 6.5v11c0 1.4-1.1 2.5-2.5 2.5h-11C5.1 20 4 18.9 4 17.5v-11Z"
-                    stroke="white" stroke-opacity=".9" stroke-width="1.8"/>
-              <path d="M7 8h10M7 12h7M7 16h8" stroke="white" stroke-opacity=".85" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-            <div>
-              <b>提示</b>
-              <span>如遇自助卡网页面无法打开，请直接联系客服</span>
-            </div>
-          </div>
-
-          <a class="btn btn-ghost"
-             href="https://fe.dtyuedan.cn/shop/lily"
-             target="_blank" rel="noopener noreferrer"
-             style="margin-top:2px;">
-            点击打开下单入口
-          </a>
-        </aside>
+    <div class="main-content">
+      <div class="product-section">
+        <div class="product-badge">✨ 不卷价格 • 只卷质量</div>
+        <h2 class="product-title">官网 ChatGPT Plus 会员</h2>
+        <div class="product-price">
+          <span class="price-prefix">仅需</span>
+          <div class="price-amount">¥190</div>
+          <span class="price-suffix">/月</span>
+        </div>
+        <div class="product-period">
+          <img src="image/27.png" alt="客服微信二维码" class="qr-code">
+          <p>防失联客服微信【备注：Gpt代充】<br>(防添加频繁，会通过比较慢，请知悉)</p>
+        </div>
+        <a href="https://xcne4xisov32.feishu.cn/wiki/HesowFPhhiYgi7kHNuzcbX5gnSd" class="help-btn" target="_blank" rel="noopener noreferrer">📖 点此查看使用帮助</a>
       </div>
 
-      <footer class="footer">
-        <span>© <span id="year"></span> 服务通告</span>
-        <span>请保存客服联系方式，以便及时获取最新入口，防止失联</span>
-      </footer>
-    </section>
+      <div class="purchase-section">
+        <h3 class="purchase-title">💳 先买卡密再进代充系统</h3>
+        <div class="purchase-options">
+          <a href="https://fe.dtyuedan.cn/shop/lily" class="purchase-btn secondary" target="_blank" rel="noopener noreferrer">
+            <h3>🎫 卡密自助购买</h3>
+            <p>即买即发，自动发货</p>
+          </a>
+          <a href="5" class="purchase-btn primary" rel="noopener noreferrer">
+            <h3>🤖 24小时代充系统</h3>
+            <p>先买卡密，再进代充</p>
+          </a>
+        </div>
+      </div>
 
-    <div class="toast" id="toast" role="status" aria-live="polite">已复制到剪贴板</div>
-  </main>
+      <div class="guarantee-section">
+        <h3 class="guarantee-title">🛡️ 服务保障</h3>
+        <div class="guarantee-list">
+          <div class="guarantee-item">
+            <div class="guarantee-icon">🔒</div>
+            <div class="guarantee-text">
+              <h4>正规可靠</h4>
+              <p>对接美区ios充值，不获取密码，安全保障。</p>
+            </div>
+          </div>
+          <div class="guarantee-item">
+            <div class="guarantee-icon">💰</div>
+            <div class="guarantee-text">
+              <h4>强力保障</h4>
+              <p>因充值封号0%，其他原因也无理由按天退款。</p>
+            </div>
+          </div>
+          <div class="guarantee-item">
+            <div class="guarantee-icon">⚡</div>
+            <div class="guarantee-text">
+              <h4>快速到账</h4>
+              <p>24小时自助充值，5分钟内开好</p>
+            </div>
+          </div>
+          <div class="guarantee-item">
+            <div class="guarantee-icon">🧾</div>
+            <div class="guarantee-text">
+              <h4>可开发票</h4>
+              <p>如需开具发票（需额外加点），请联系我们的客服人员。</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <script>
-    // 年份
-    document.getElementById('year').textContent = new Date().getFullYear();
+      <div class="video-section">
+        <h3 class="video-title">🎬 操作流程</h3>
+        <div class="video-container">
+          <video class="video-player" controls title="操作视频教程"
+            poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%232c3e50'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Inter' font-size='24' fill='%23bdc3c7'%3E视频教程%3C/text%3E%3C/svg%3E">
+            <source src="https://cloud.video.taobao.com/play/u/null/p/1/e/6/t/1/514196921671.mp4" type="video/mp4">
+            您的浏览器不支持视频播放
+          </video>
+        </div>
+      </div>
 
-    // 复制客服号
-    const textToCopy = "BKP168001";
-    const btn = document.getElementById('copyBtn');
-    const toast = document.getElementById('toast');
+      <div class="features">
+        <div class="feature-card">
+          <span class="feature-icon">⭐</span>
+          <h4>信誉保证</h4>
+          <p>多年经验，值得信赖</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🎯</span>
+          <h4>专业服务</h4>
+          <p>专注Gpt Plus代充服务</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">💎</span>
+          <h4>品质保障</h4>
+          <p>高质量服务，用户好评</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    function showToast(msg){
-      toast.textContent = msg;
-      toast.classList.add('show');
-      clearTimeout(showToast._t);
-      showToast._t = setTimeout(()=>toast.classList.remove('show'), 1600);
-    }
-
-    btn.addEventListener('click', async () => {
-      try{
-        await navigator.clipboard.writeText(textToCopy);
-        showToast("已复制：" + textToCopy);
-      }catch(e){
-        const ta = document.createElement('textarea');
-        ta.value = textToCopy;
-        ta.style.position = 'fixed';
-        ta.style.opacity = '0';
-        document.body.appendChild(ta);
-        ta.focus(); ta.select();
-        try{
-          document.execCommand('copy');
-          showToast("已复制：" + textToCopy);
-        }catch(err){
-          showToast("复制失败，请手动复制：" + textToCopy);
-        }
-        document.body.removeChild(ta);
-      }
-    });
-  </script>
-
-  <!-- Cloudflare beacon（保留一个即可） -->
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
-          integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
-          data-cf-beacon='{"version":"2024.11.0","token":"a661f215a3544d818228e20d19489f79","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
-          crossorigin="anonymous"></script>
+    integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+    data-cf-beacon='{"version":"2024.11.0","token":"8aefcf74525947dfbb6e76abd86c1114","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
+    crossorigin="anonymous"></script>
 </body>
 </html>
